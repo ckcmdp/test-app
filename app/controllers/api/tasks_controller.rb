@@ -2,7 +2,7 @@
 module Api
   class TasksController < ApplicationController
     before_action :authorized
-    before_action :set_task, only: [:assign, :complete]
+    before_action :set_task, only: %i[assign complete]
 
     def create
       return render json: { error: 'Not authorized' }, status: :unauthorized unless current_user.admin?
@@ -56,4 +56,3 @@ module Api
     end
   end
 end
-

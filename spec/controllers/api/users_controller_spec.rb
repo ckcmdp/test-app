@@ -26,7 +26,7 @@ RSpec.describe Api::UsersController, type: :controller do
         {
           name: '',
           email: 'abc@xyz.com',
-          password: 'Password',
+          password: 'Password'
         }
       end
 

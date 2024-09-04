@@ -1,24 +1,24 @@
 # README
+After starting the rails server, please use these endpoints to test the API working
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+curl -X POST http://localhost:3000/api/login -d "email=member2@gmail.com&password=Chandan"
 
-Things you may want to cover:
+## Register API
+curl -X POST http://localhost:3000/api/register -d "email=member2@gmail.com&password=Chandan&role=member&name=Chandan"
 
-* Ruby version
+## Login API
+curl -X POST http://localhost:3000/api/login -d "email=c@b.com&password=Chandan"
 
-* System dependencies
+## create tasks API
+curl -X POST http://localhost:3000/api/tasks -H "Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozfQ.7ahDwRQB_XNdEuNJxsEpB9udaA1Zn2GlkqN4TieRj9w" -d "task[title]=New Task&task[description]=Task description"
 
-* Configuration
+## Task Assign API
+curl -X POST http://localhost:3000/api/tasks/1/assign -H "Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozfQ.7ahDwRQB_XNdEuNJxsEpB9udaA1Zn2GlkqN4TieRj9w" -d "user_id=1"
 
-* Database creation
+## assigned tasks API
+curl -X GET http://localhost:3000/api/tasks/assigned -H "Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxfQ.dKDWC75kZLfsZE7nx18bTZP6o1bKPBA6IcbMsMzsvzY"
 
-* Database initialization
 
-* How to run the test suite
+## complete an assigned tasks API
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+curl -X PATCH http://localhost:3000/api/tasks/1/complete -H "Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxfQ.dKDWC75kZLfsZE7nx18bTZP6o1bKPBA6IcbMsMzsvzY"
