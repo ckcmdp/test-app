@@ -1,6 +1,8 @@
 # README
 After starting the rails server, please use these endpoints to test the API working
 
+Update the credentials and token as per the local development credentials
+
 curl -X POST http://localhost:3000/api/login -d "email=member2@gmail.com&password=Chandan"
 
 ## Register API
